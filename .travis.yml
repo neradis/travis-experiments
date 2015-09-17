@@ -13,4 +13,7 @@ script:
   - uname -a
   - cat /etc/issue
   - docker --version
-  - echo Thats all, pal!
+  - git --version
+  - zx --version
+  - ps --version
+  - cgcreate -h
