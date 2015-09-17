@@ -7,3 +7,4 @@ script:
   - env
   - uname -a
   - cat /etc/issue
+  - echo Thats all, pal!
