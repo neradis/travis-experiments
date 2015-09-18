@@ -13,6 +13,6 @@ pre-install:
   - wget -O docker https://get.docker.com/builds/Linux/x86_64/docker-latest
   
 script:
-  - service docker stop
+  - id
+  - sudo service docker stop
   - ./docker -d
-  
