@@ -8,12 +8,11 @@ language: python
 python:
   - "2.7"
 
+pre-install:
+  - pwd
+  - wget -O docker https://get.docker.com/builds/Linux/x86_64/docker-latest
+  
 script:
-  - env
-  - uname -a
-  - cat /etc/issue
-  - docker --version
-  - git --version
-  - xz --version
-  - ps --version
-  - mount | grep -F cgroup
+  - service docker stop
+  - ./docker -d
+  
