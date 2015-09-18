@@ -1,23 +1,26 @@
 sudo: required
 
-services:
-  - docker
-
 language: python
 
 python:
   - "2.7"
 
 before_install:
-  - pwd
-  - wget -O docker https://get.docker.com/builds/Linux/x86_64/docker-latest
-  - chmod +x docker
+  - service docker status
+  - echo $PATH
+  - wget -O /home/travis/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest
+  - chmod +x /home/travis/bin/docker
   
 script:
-  - id
-  - sudo service docker stop
-  - ls -lh | grep -F docker
-  - sudo ./docker -d -g var_lib_docker &
+  - sudo docker -d -g var_lib_docker &
   - ./docker --version
   - ./docker ps
+
+after_success:
+  - echo 'success'
+
+after_failure:
+  - echo 'failure'
+  
+after_script:
   - sudo kill `sudo cat /var/run/docker.pid`
