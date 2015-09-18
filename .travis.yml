@@ -17,5 +17,7 @@ script:
   - id
   - sudo service docker stop
   - ls -lh | grep -F docker
-  - sudo ./docker -d -g var_lib_docker
-
+  - sudo ./docker -d -g var_lib_docker &
+  - ./docker --version
+  - ./docker ps
+  - sudo kill `sudo cat /var/run/docker.pid`
