@@ -17,4 +17,5 @@ script:
   - id
   - sudo service docker stop
   - ls -lh | grep -F docker
-  - ./docker -d
+  - sudo ./docker -d -g var_lib_docker
+
