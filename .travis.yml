@@ -6,7 +6,6 @@ python:
   - "2.7"
 
 before_install:
-  - service docker status
   - echo $PATH
   - wget -O /home/travis/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest
   - chmod +x /home/travis/bin/docker
