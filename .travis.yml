@@ -7,7 +7,7 @@ python:
 
 before_install:
   - wget -O /home/travis/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest
-  - [[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"
+  - '[[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"'
   - chmod +x "$HOME/bin/docker"
   
 script:
