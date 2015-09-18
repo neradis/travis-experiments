@@ -11,8 +11,10 @@ python:
 before_install:
   - pwd
   - wget -O docker https://get.docker.com/builds/Linux/x86_64/docker-latest
+  - chmod +x docker
   
 script:
   - id
   - sudo service docker stop
+  - ls -lh | grep -F docker
   - ./docker -d
