@@ -14,6 +14,6 @@ script:
   - cat /etc/issue
   - docker --version
   - git --version
-  - zx --version
+  - xz --version
   - ps --version
-  - cgcreate -h
+  - mount | grep -F cgroup
