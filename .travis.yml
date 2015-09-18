@@ -6,14 +6,14 @@ python:
   - "2.7"
 
 before_install:
-  - echo $PATH
   - wget -O /home/travis/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-latest
-  - chmod +x /home/travis/bin/docker
+  - [[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"
+  - chmod +x "$HOME/bin/docker"
   
 script:
   - sudo docker -d -g var_lib_docker &
-  - ./docker --version
-  - ./docker ps
+  - docker --version
+  - docker ps
 
 after_success:
   - echo 'success'
