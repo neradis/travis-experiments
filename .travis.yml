@@ -6,7 +6,7 @@ python:
   - "2.7"
 
 before_install:
-  - wget -O "$HOME/docker" https://get.docker.com/builds/Linux/x86_64/docker-latest
+  - curl -o "$HOME/docker" https://get.docker.com/builds/Linux/x86_64/docker-latest
   - '[[ -d "$HOME/bin" ]] || mkdir "$HOME/bin"'
   - chmod +x "$HOME/bin/docker"
   
